@@ -1,0 +1,15 @@
+/**app.wxss**/
+page {
+  background: #f5f9fc;
+  min-height: 100vh;
+}
+
+button {
+  background: initial;
+  margin: 0;
+  padding: 0;
+}
+
+button::after {
+  border: none;
+}

@@ -1,0 +1,46 @@
+<view class="container">
+  <!-- 加载状态 -->
+  <view class="loading-state" wx:if="{{state === 'loading'}}">
+    <text class="loading-text">加载计划中...</text>
+  </view>
+
+  <!-- 完成状态 -->
+  <view class="completed-state" wx:elif="{{state === 'completed'}}">
+    <text class="completed-icon">🎉</text>
+    <text class="completed-title">训练完成</text>
+    <text class="completed-subtitle">太棒了！你已完成本次训练</text>
+    <button class="return-btn" bindtap="returnToList">返回计划列表</button>
+  </view>
+
+  <!-- 训练中状态 -->
+  <view class="training-state" wx:else>
+    <!-- 顶部进度 -->
+    <view class="progress-bar">
+      <view class="progress-fill" style="width: {{progress}}%"></view>
+    </view>
+    <text class="progress-text">第 {{currentGroup}} / {{totalGroups}} 组</text>
+
+    <!-- 状态显示 -->
+    <view class="state-display">
+      <text class="state-text">{{getStateText()}}</text>
+      <text class="countdown">{{countdown}}</text>
+      <text class="countdown-unit">秒</text>
+    </view>
+
+    <!-- 动作提示 -->
+    <view class="action-hint">
+      <text wx:if="{{state === 'breathing_prepare'}}">准备开始...</text>
+      <text wx:elif="{{state === 'breathing'}}">平稳呼吸</text>
+      <text wx:elif="{{state === 'holding'}}">保持冷静，不要紧张</text>
+      <text wx:elif="{{state === 'resting'}}">放松休息</text>
+    </view>
+
+    <!-- 控制按钮 -->
+    <view class="controls">
+      <button class="control-btn pause" bindtap="togglePause">
+        {{isPaused ? '继续' : '暂停'}}
+      </button>
+      <button class="control-btn stop" bindtap="stopTraining">终止</button>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,38 @@
+<view class="page">
+  <!-- 头部 -->
+  <view class="header">
+    <text class="title">训练列表</text>
+    <view class="create-btn" bindtap="createPlan">+ 新建</view>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="status-view" wx:if="{{loading}}">
+    <text class="status-text">加载中...</text>
+  </view>
+
+  <!-- 空状态 -->
+  <view class="status-view" wx:elif="{{plans.length === 0}}">
+    <text class="empty-icon">🌊</text>
+    <text class="empty-text">暂无训练计划</text>
+    <text class="empty-hint">点击上方按钮创建</text>
+  </view>
+
+  <!-- 计划列表 -->
+  <view class="list" wx:else>
+    <view class="item" wx:for="{{plans}}" wx:key="_id">
+      <view class="item-top">
+        <text class="item-name">{{item.planName}}</text>
+      </view>
+      <view class="item-bottom">
+        <text class="item-meta">{{item.groups.length}}组 · {{item.totalTime}}</text>
+      </view>
+      <view class="item-actions">
+        <view class="btn-primary" data-id="{{item._id}}" bindtap="startTraining">▶️ 开始</view>
+        <view class="btn-group-right">
+          <view class="btn-icon btn-edit" data-id="{{item._id}}" bindtap="editPlan">✏️</view>
+          <view class="btn-icon btn-delete" data-id="{{item._id}}" bindtap="deletePlan">🗑️</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

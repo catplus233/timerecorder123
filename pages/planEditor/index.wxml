@@ -1,0 +1,90 @@
+<view class="container">
+  <view class="section">
+    <text class="section-title">计划名称</text>
+    <input
+      class="input"
+      placeholder="请输入计划名称"
+      value="{{planName}}"
+      bindinput="onPlanNameChange"
+      maxlength="20"
+    />
+  </view>
+
+  <view class="section">
+    <text class="section-title">调息时间（≥30秒）</text>
+    <view class="stepper-row">
+      <view class="stepper-btn minus" data-type="prep" bindtap="onStepperMinus">−</view>
+      <input
+        class="stepper-input"
+        type="number"
+        value="{{preparationTime}}"
+        data-type="prep"
+        bindchange="onStepperInput"
+      />
+      <view class="stepper-btn plus" data-type="prep" bindtap="onStepperPlus">+</view>
+      <text class="stepper-unit">秒</text>
+    </view>
+  </view>
+
+  <view class="section">
+    <view class="section-header">
+      <text class="section-title">训练组</text>
+      <view class="add-btn" bindtap="addGroup">+ 添加组</view>
+    </view>
+
+    <view class="group-list">
+      <view class="group-item" wx:for="{{groups}}" wx:key="groupIndex">
+        <view class="group-header">
+          <text class="group-title">第{{item.groupIndex}}组</text>
+          <view
+            class="delete-group-btn"
+            data-index="{{index}}"
+            bindtap="deleteGroup"
+            wx:if="{{groups.length > 1}}"
+          >删除</view>
+        </view>
+
+        <view class="group-row">
+          <text class="row-label">闭气时间（≥15秒）</text>
+          <view class="stepper-row">
+            <view class="stepper-btn minus" data-index="{{index}}" data-type="hold" bindtap="onStepperMinus">−</view>
+            <input
+              class="stepper-input"
+              type="number"
+              value="{{item.holdTime}}"
+              data-index="{{index}}"
+              data-type="hold"
+              bindchange="onStepperInput"
+            />
+            <view class="stepper-btn plus" data-index="{{index}}" data-type="hold" bindtap="onStepperPlus">+</view>
+            <text class="stepper-unit">秒</text>
+          </view>
+        </view>
+
+        <view class="group-row" wx:if="{{index < groups.length - 1}}">
+          <text class="row-label">休息时间（≥15秒）</text>
+          <view class="stepper-row">
+            <view class="stepper-btn minus" data-index="{{index}}" data-type="rest" bindtap="onStepperMinus">−</view>
+            <input
+              class="stepper-input"
+              type="number"
+              value="{{item.restTime}}"
+              data-index="{{index}}"
+              data-type="rest"
+              bindchange="onStepperInput"
+            />
+            <view class="stepper-btn plus" data-index="{{index}}" data-type="rest" bindtap="onStepperPlus">+</view>
+            <text class="stepper-unit">秒</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="total-time">
+    <text>预计总时长</text>
+    <text class="time-value">{{totalTime}}</text>
+  </view>
+
+  <view class="save-btn" bindtap="savePlan">保存计划</view>
+</view>
