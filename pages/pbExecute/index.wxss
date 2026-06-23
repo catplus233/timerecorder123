@@ -1,0 +1,121 @@
+.container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+}
+
+/* 完成/停止状态 */
+.completed-state, .stopped-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.completed-icon, .stopped-icon {
+  font-size: 160rpx;
+  margin-bottom: 40rpx;
+}
+
+.completed-title, .stopped-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+
+.completed-subtitle, .stopped-subtitle {
+  font-size: 30rpx;
+  color: #666666;
+  margin-bottom: 60rpx;
+  text-align: center;
+}
+
+.return-btn {
+  background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+  color: #ffffff;
+  font-size: 32rpx;
+  padding: 28rpx 80rpx;
+  border-radius: 50rpx;
+}
+
+/* 训练中状态 */
+.training-state {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.state-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40rpx;
+}
+
+.state-text {
+  font-size: 36rpx;
+  color: #333333;
+  margin-bottom: 20rpx;
+}
+
+.countdown {
+  font-size: 200rpx;
+  font-weight: bold;
+  color: #29b6f6;
+  line-height: 1;
+  text-shadow: 0 4rpx 20rpx rgba(79, 195, 247, 0.3);
+}
+
+.countdown-unit {
+  font-size: 36rpx;
+  color: #666666;
+  margin-top: 10rpx;
+}
+
+.action-hint {
+  background: rgba(255,255,255,0.9);
+  border-radius: 20rpx;
+  padding: 24rpx 48rpx;
+  margin-bottom: 30rpx;
+  box-shadow: 0 4rpx 16rpx rgba(79, 195, 247, 0.15);
+}
+
+.action-hint text {
+  font-size: 30rpx;
+  color: #333333;
+}
+
+.target-hint {
+  background: rgba(255, 87, 34, 0.1);
+  border-radius: 20rpx;
+  padding: 20rpx 48rpx;
+  margin-bottom: 80rpx;
+}
+
+.target-hint text {
+  font-size: 26rpx;
+  color: #ff5722;
+}
+
+.controls {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.control-btn {
+  font-size: 32rpx;
+  padding: 28rpx 80rpx;
+  border-radius: 50rpx;
+}
+
+.control-btn.stop {
+  background: #fff0f0;
+  color: #ff6b6b;
+}

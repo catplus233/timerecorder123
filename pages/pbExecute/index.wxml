@@ -1,0 +1,43 @@
+<view class="container">
+  <!-- 完成状态 -->
+  <view class="completed-state" wx:if="{{state === 'completed'}}">
+    <text class="completed-icon">🎉</text>
+    <text class="completed-title">挑战完成</text>
+    <text class="completed-subtitle">目标：{{targetDisplay}}，太棒了！</text>
+    <view class="return-btn" bindtap="returnToChallenge">返回</view>
+  </view>
+
+  <!-- 停止状态 -->
+  <view class="stopped-state" wx:elif="{{state === 'stopped'}}">
+    <text class="stopped-icon">⏹️</text>
+    <text class="stopped-title">训练已停止</text>
+    <text class="stopped-subtitle">目标：{{targetDisplay}}</text>
+    <view class="return-btn" bindtap="returnToChallenge">返回</view>
+  </view>
+
+  <!-- 训练中状态 -->
+  <view class="training-state" wx:else>
+    <!-- 状态显示 -->
+    <view class="state-display">
+      <text class="state-text">{{state === 'preparing' ? '准备中' : '憋气中'}}</text>
+      <text class="countdown">{{countdown}}</text>
+      <text class="countdown-unit">秒</text>
+    </view>
+
+    <!-- 动作提示 -->
+    <view class="action-hint">
+      <text wx:if="{{state === 'preparing'}}">平稳呼吸，调整状态</text>
+      <text wx:else>保持冷静，不要紧张</text>
+    </view>
+
+    <!-- 目标提醒 -->
+    <view class="target-hint">
+      <text>目标：{{targetDisplay}}</text>
+    </view>
+
+    <!-- 控制按钮 -->
+    <view class="controls">
+      <view class="control-btn stop" bindtap="stopChallenge">终止挑战</view>
+    </view>
+  </view>
+</view>

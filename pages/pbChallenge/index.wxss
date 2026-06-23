@@ -1,0 +1,128 @@
+.page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 24rpx;
+  box-sizing: border-box;
+  background: #f5f9fc;
+}
+
+.header {
+  margin-bottom: 64rpx;
+  text-align: center;
+}
+
+.title {
+  display: block;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 16rpx;
+}
+
+.subtitle {
+  display: block;
+  font-size: 26rpx;
+  color: #666666;
+}
+
+.loading-view {
+  display: flex;
+  justify-content: center;
+  margin-top: 200rpx;
+}
+
+.loading-text {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.time-setting {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40rpx;
+}
+
+.stepper-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+}
+
+.stepper-label {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.stepper {
+  display: flex;
+  align-items: center;
+  gap: 32rpx;
+  background: #ffffff;
+  border-radius: 20rpx;
+  padding: 20rpx 40rpx;
+  box-shadow: 0 2rpx 12rpx rgba(79, 195, 247, 0.1);
+}
+
+.stepper-btn {
+  width: 72rpx;
+  height: 72rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40rpx;
+  color: #ffffff;
+  background: linear-gradient(135deg, #4fc3f7 0%, #29b6f6 100%);
+  border-radius: 50%;
+}
+
+.stepper-btn.disabled {
+  background: #cccccc;
+  opacity: 0.5;
+}
+
+.stepper-value {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #333333;
+  min-width: 100rpx;
+  text-align: center;
+}
+
+.total-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16rpx;
+  background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+  border-radius: 24rpx;
+  padding: 48rpx 80rpx;
+  margin-top: 20rpx;
+}
+
+.total-label {
+  font-size: 28rpx;
+  color: #666666;
+}
+
+.total-value {
+  font-size: 56rpx;
+  font-weight: bold;
+  color: #29b6f6;
+  text-shadow: 0 2rpx 8rpx rgba(79, 195, 247, 0.2);
+}
+
+.start-btn {
+  margin-top: 40rpx;
+  background: linear-gradient(135deg, #ff7043 0%, #ff5722 100%);
+  border-radius: 50rpx;
+  padding: 28rpx 120rpx;
+  box-shadow: 0 6rpx 24rpx rgba(255, 87, 34, 0.3);
+}
+
+.start-btn-text {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #ffffff;
+}

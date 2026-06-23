@@ -1,8 +1,10 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/pbChallenge/index",
     "pages/planEditor/index",
-    "pages/training/index"
+    "pages/training/index",
+    "pages/pbExecute/index"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -10,6 +12,26 @@
     "navigationBarBackgroundColor": "#1a1a2e",
     "navigationBarTitleText": "小怪CO₂训练",
     "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#999999",
+    "selectedColor": "#29b6f6",
+    "backgroundColor": "#ffffff",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "训练列表",
+        "iconPath": "images/icons/home.png",
+        "selectedIconPath": "images/icons/home-active.png"
+      },
+      {
+        "pagePath": "pages/pbChallenge/index",
+        "text": "PB挑战",
+        "iconPath": "images/icons/business.png",
+        "selectedIconPath": "images/icons/business-active.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2",

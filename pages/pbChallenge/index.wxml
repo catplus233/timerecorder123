@@ -1,0 +1,46 @@
+<view class="page">
+  <!-- 头部 -->
+  <view class="header">
+    <text class="title">PB 挑战</text>
+    <text class="subtitle">设置你的目标憋气时长，挑战极限</text>
+  </view>
+
+  <!-- 加载中 -->
+  <view class="loading-view" wx:if="{{loading}}">
+    <text class="loading-text">加载中...</text>
+  </view>
+
+  <!-- 时间设置 -->
+  <view class="time-setting" wx:else>
+    <!-- 分钟步进器 -->
+    <view class="stepper-group">
+      <text class="stepper-label">分钟</text>
+      <view class="stepper">
+        <view class="stepper-btn {{minutes <= 1 ? 'disabled' : ''}}" bindtap="decreaseMinutes">−</view>
+        <text class="stepper-value">{{minutes}}</text>
+        <view class="stepper-btn {{minutes >= 4 ? 'disabled' : ''}}" bindtap="increaseMinutes">+</view>
+      </view>
+    </view>
+
+    <!-- 秒数步进器 -->
+    <view class="stepper-group">
+      <text class="stepper-label">秒数</text>
+      <view class="stepper">
+        <view class="stepper-btn {{seconds <= 0 ? 'disabled' : ''}}" bindtap="decreaseSeconds">−</view>
+        <text class="stepper-value">{{seconds}}</text>
+        <view class="stepper-btn {{seconds >= 55 ? 'disabled' : ''}}" bindtap="increaseSeconds">+</view>
+      </view>
+    </view>
+
+    <!-- 总时长显示 -->
+    <view class="total-display">
+      <text class="total-label">目标时长</text>
+      <text class="total-value">{{totalDisplay}}</text>
+    </view>
+
+    <!-- 开始按钮 -->
+    <view class="start-btn" bindtap="startChallenge">
+      <text class="start-btn-text">开始挑战</text>
+    </view>
+  </view>
+</view>
