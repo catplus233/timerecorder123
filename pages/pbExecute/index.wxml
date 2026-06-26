@@ -19,7 +19,7 @@
   <view class="training-state" wx:else>
     <!-- 状态显示 -->
     <view class="state-display">
-      <text class="state-text">{{state === 'preparing' ? '准备中' : '憋气中'}}</text>
+      <text class="state-text">{{state === 'preparing' ? '准备中' : '闭气中'}}</text>
       <text class="countdown">{{countdown}}</text>
       <text class="countdown-unit">秒</text>
     </view>

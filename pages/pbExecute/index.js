@@ -106,7 +106,7 @@ Page({
     }, 1000);
   },
 
-  // ==================== 憋气阶段 ====================
+  // ==================== 闭气阶段 ====================
   startHoldPhase() {
     const totalDuration = this.data.totalDuration;
     let remaining = totalDuration;

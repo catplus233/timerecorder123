@@ -13,7 +13,7 @@
 
 .title {
   display: block;
-  font-size: 40rpx;
+  font-size: 36rpx;
   font-weight: bold;
   color: #333333;
   margin-bottom: 16rpx;

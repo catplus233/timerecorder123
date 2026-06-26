@@ -2,7 +2,6 @@
   <!-- 头部 -->
   <view class="header">
     <text class="title">训练列表</text>
-    <view class="create-btn" bindtap="createPlan">+ 新建</view>
   </view>
 
   <!-- 加载中 -->
@@ -14,7 +13,7 @@
   <view class="status-view" wx:elif="{{plans.length === 0}}">
     <text class="empty-icon">🌊</text>
     <text class="empty-text">暂无训练计划</text>
-    <text class="empty-hint">点击上方按钮创建</text>
+    <text class="empty-hint">点击下方按钮创建</text>
   </view>
 
   <!-- 计划列表 -->
@@ -34,5 +33,10 @@
         </view>
       </view>
     </view>
+  </view>
+
+  <!-- 底部固定新建按钮 -->
+  <view class="bottom-bar">
+    <view class="create-btn-bottom" bindtap="createPlan">+ 新建</view>
   </view>
 </view>

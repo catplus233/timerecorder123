@@ -2,7 +2,7 @@
   <!-- 头部 -->
   <view class="header">
     <text class="title">PB 挑战</text>
-    <text class="subtitle">设置你的目标憋气时长，挑战极限</text>
+    <text class="subtitle">设置你的目标闭气时长，挑战极限</text>
   </view>
 
   <!-- 加载中 -->
